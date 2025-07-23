@@ -60,14 +60,14 @@
       // 计算校正后距离
       const hypoDis = lineDis - k * dep;
       
-      // 计算CEA模型值
+      // 计算CEA经验公式模型值
       const ceaCsis = 1.297 * m - 4.368 * Math.log10(hypoDis + 8) + 5.363;
       
-      // 计算ICL模型值
-      const iclCsis = 1.363 * m - 1.494 * Math.log(hypoDis) + 2.941;
+      // 计算ICL书上给出的经验公式模型值
+      const ICLCsis = 1.363 * m - 1.494 * Math.log(hypoDis) + 2.941;
       
       // 返回平均值
-      return (ceaCsis + iclCsis) / 2;
+      return (ceaCsis + ICLCsis) / 2;
     }
   }
   
